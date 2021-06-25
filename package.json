@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
     "jest": "jest --verbose",
     "test": "jest"
   },
