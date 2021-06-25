@@ -3,17 +3,20 @@ import { GetProductsUseCase } from "./GetProductsUseCase";
 export class GetProductsController {
 
     constructor(
-        private getPullsUseCase: GetProductsUseCase
+        private getProductsUseCase: GetProductsUseCase
     ) { }
 
     async handle(request: Request, response: Response): Promise<Response> {
-        const organization = request.params.organization;
+        const { organizationName } = request.params;
         try {
-            const products = await this.getPullsUseCase.execute({
-                organization,
+            const locateProducts = await this.getProductsUseCase.execute({
+                organizationName,
             });
+
+            console.log('localizou? ',locateProducts);
             response.json({
-                products
+                total: locateProducts.total,
+                products: locateProducts.products
             })
             return response.status(200).send();
         } catch (error) {

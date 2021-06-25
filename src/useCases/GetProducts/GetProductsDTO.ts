@@ -1,3 +1,3 @@
 export interface IGetProductsRequestDTO {
-    organization: string;
+    organizationName: string;
 }
