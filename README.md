@@ -166,9 +166,9 @@ API disponível: https://api-catalog-list.herokuapp.com/
 ## Checklist
 
 - [x] POST /login
-- [ ] GET /products/:organizationName?tags=<tag1>,<tag2>,...
-- [x] Os dados do arquivo `products.txt` não deve ser carregado de forma integral em memória. SUGESTÃO: Utiliza streams.
+- [x] GET /products/:organizationName?tags=<tag1>,<tag2>,...
+- [x] Os dados do arquivo `products.txt` não deve ser carregado de forma integral em memória. SUGESTÃO: Utiliza streams. (Carreguei os arquivos porém ainda verificando de usar async pipeline)
 - [x] A autenticacão do usuário deve ser feita através de alguma implementacão de JWT.
-- [ ] Se julgar necessário manter sessão, deve ser feito de forma independente de server.
+- [] Se julgar necessário manter sessão, deve ser feito de forma independente de server.
 - [x] A API deve ser escalável horizontalmente.
 - [ ] Manual de instalacão de execucão da API, incluindo as dependências de libs, runtimes, e etc.
