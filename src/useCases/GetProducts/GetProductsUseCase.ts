@@ -5,7 +5,6 @@ export class GetProductsUseCase {
   constructor(private productsRepository: IProductsRepository) {}
 
   async execute(data: IGetProductsRequestDTO) {
-    console.log(data);
     const products = await this.productsRepository.findProducts(
       data.organizationName,
       data.tagsArray

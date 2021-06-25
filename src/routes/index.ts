@@ -16,12 +16,12 @@ router.post('/login', (request, response) => {
   return authUserController.handle(request, response)
 })
 
-/* router.get('/products/:organizationName', authUserController.verify, (request, response) => {
-  return getProductsController.handle(request, response)
-}) */
-
-router.get('/products/:organizationName', (request, response) => {
+router.get('/products/:organizationName', authUserController.verify, (request, response) => {
   return getProductsController.handle(request, response)
 })
+
+/* router.get('/products/:organizationName', (request, response) => {
+  return getProductsController.handle(request, response)
+}) */
 
 export { router }
