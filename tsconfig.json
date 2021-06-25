@@ -1,16 +1,20 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ES6",
     "module": "CommonJS",
     "allowJs": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@repositories/*": ["repositories/*"],
+      "@implementations/*": ["repositories/implementations/*"],
+      "@fixtures/*": ["repositories/fixtures/*"],
+      "@entities/*": ["entities/*"],
+      "@useCases/*": ["useCases/*"],
+      "@routes/*": ["routes/*"],
+      "@app/*": ["./*"]
+    }
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules" /* exclude everything in  node_modules */],
-  "baseUrl": "./src",
-  "paths": {
-    "@fixtures/*": ["repositories/fixtures/*"]
-  }
 }

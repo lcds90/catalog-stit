@@ -1,17 +1,19 @@
-import { uuid } from "uuidv4";
+import { uuid } from 'uuidv4'
 
 export class Product {
-    public readonly id: string;
+  public readonly id: string
 
-    public email: string;
-    public password: string;
-    public roles: Array<string>;
+  public name: string
+  public department: string
+  public material: string
+  public price: number
+  public tags: string[]
 
-    constructor(props: Omit<Product, 'id'>, id?: string) {
-        Object.assign(this, props);
+  constructor(props: Omit<Product, 'id'>, id?: string) {
+    Object.assign(this, props)
 
-        if (!id) {
-            this.id = uuid();
-        }
+    if (!id) {
+      this.id = uuid()
     }
+  }
 }

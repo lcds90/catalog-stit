@@ -1,6 +1,5 @@
-import { Product } from "../entities/Product";
+import { Product } from '@entities/Product'
 
 export interface IProductsRepository {
-    // temporiaramente any para tratar informações e filtrar
-    findProducts(organizationName: string): Promise<any>;
+  findProducts(organizationName: string, tags: string[]): Promise<Product[]>
 }
