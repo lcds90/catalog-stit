@@ -20,8 +20,4 @@ router.get('/products/:organizationName', authUserController.verify, (request, r
   return getProductsController.handle(request, response)
 })
 
-/* router.get('/products/:organizationName', (request, response) => {
-  return getProductsController.handle(request, response)
-}) */
-
 export { router }

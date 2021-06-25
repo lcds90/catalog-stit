@@ -160,7 +160,8 @@ Aqui pode ser passado o nome de qualquer entrada de organization, independente d
 
 ## Informações
 
-A estrutura da aplicação está baseado no conceito de SOLID, onde os UseCases são totalmente idependentes da parte da arquitetura da aplicação, tenho somente como necessário realizar a mudança da implementação nos repositórios.
+A estrutura da aplicação está baseada no conceito de [SOLID](https://www.youtube.com/watch?v=vAV4Vy4jfkc), onde os UseCases são totalmente idenpendentes da parte da arquitetura da aplicação, tendo somente como necessário realizar a mudança da implementação na pasta de repositórios.
+
 API disponível: https://api-catalog-list.herokuapp.com/
 
 ## Checklist
@@ -169,6 +170,6 @@ API disponível: https://api-catalog-list.herokuapp.com/
 - [x] GET /products/:organizationName?tags=<tag1>,<tag2>,...
 - [x] Os dados do arquivo `products.txt` não deve ser carregado de forma integral em memória. SUGESTÃO: Utiliza streams. (Carreguei os arquivos porém ainda verificando de usar async pipeline)
 - [x] A autenticacão do usuário deve ser feita através de alguma implementacão de JWT.
-- [] Se julgar necessário manter sessão, deve ser feito de forma independente de server.
+- [x] Se julgar necessário manter sessão, deve ser feito de forma independente de server.
 - [x] A API deve ser escalável horizontalmente.
 - [ ] Manual de instalacão de execucão da API, incluindo as dependências de libs, runtimes, e etc.
