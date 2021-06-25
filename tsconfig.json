@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2017",                          
-    "module": "commonjs", 
-    "allowJs": true,                                            
-    "esModuleInterop": true,                  
-    "skipLibCheck": true,                     
-    "forceConsistentCasingInFileNames": true,  
-    "resolveJsonModule": true,
+    "target": "esnext",
+    "module": "CommonJS",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
   },
-  "include": [
-    "src/**/*.ts"
-  ]
+  "include": ["src/**/*.ts", "src/repositories/implementations/GetProductsRepository.mjs", "src/repositories/implementations/GetProductsRepository mjs"],
+  "baseUrl": "./src",
+  "paths": {
+    "@fixtures/*": ["repositories/fixtures/*"],
+  }
 }

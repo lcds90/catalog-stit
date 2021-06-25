@@ -1,13 +1,12 @@
 import { User } from "../../entities/User";
 import { IUsersRepository } from "../IUsersRepostory";
-import usersJson from './users.json';
+import fs from 'fs';
 export class GetUsersRepository implements IUsersRepository {
-    private users: User[] = [...usersJson];
-
+    private usersJson = require("./fixtures/users.json");
+    private users: User[] = [...this.usersJson];
+    
     async findByEmail(email: string): Promise<User> {
-        console.log(email)
         const user = this.users.find(user => user.email === email);
-        console.log(user, this.users);
         return user;
     }
 
@@ -15,5 +14,4 @@ export class GetUsersRepository implements IUsersRepository {
         const user = this.users.find(user => user.password === password);
         return user;
     }
-
 }
