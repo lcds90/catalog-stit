@@ -1,3 +1,3 @@
 import { app } from "./app";
-
-app.listen(8080)
+const PORT : string|number = process.env.PORT || 5000;
+app.listen(PORT)
