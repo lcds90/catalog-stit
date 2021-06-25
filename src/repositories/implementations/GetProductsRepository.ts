@@ -37,11 +37,16 @@ export class GetProductsRepository implements IProductsRepository {
         organizationName.toLowerCase()
       ) {
 
-        filteredProduct.tags.filter(tag => {
-          user_tags.every(user_tag => {
-            if (tag.toLowerCase().includes(user_tag.toLowerCase())) products.push(filteredProduct);
-          })
-        });
+        if(user_tags.length !== 0){
+          filteredProduct.tags.filter(tag => {
+            user_tags.filter(user_tag => {
+              if (tag.toLowerCase().includes(user_tag.toLowerCase())) products.push(filteredProduct);
+            })
+          });
+        }
+
+        products.push(filteredProduct)
+
       }
     }
 

@@ -27,10 +27,8 @@ export class AuthUserController {
   async verify(request: Request, response: Response, next): Promise<Response> {
     const authToken = request.headers['authorization']
     if (authToken != undefined) {
-      console.log(request.headers)
       const bearer = authToken.split(' ')
       const token = bearer[1];
-      console.log(token);
       try {
         jwt.verify(token, secret, (err, decoded) => {
           if (err) {
