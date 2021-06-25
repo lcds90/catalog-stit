@@ -5,8 +5,8 @@ export class GetProductsController {
 
   async handle(request: Request, response: Response): Promise<Response> {
     const { organizationName } = request.params
-    const { tags } = request.query
-    const tagsArray: string[] = []
+    let { tags } = request.query
+    const tagsArray: string[] = tags.toString().split(',');
     try {
       const locateProducts = await this.getProductsUseCase.execute({
         organizationName,

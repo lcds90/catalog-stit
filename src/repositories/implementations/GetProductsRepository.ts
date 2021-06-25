@@ -15,7 +15,7 @@ import { IProductsRepository } from '@repositories/IProductsRepository'
 export class GetProductsRepository implements IProductsRepository {
   async findProducts(
     organizationName: string,
-    tags: string[]
+    user_tags: string[]
   ): Promise<Product[]> {
     const products: Product[] = []
     const filesDir = `${dirname()}/fixtures/`
@@ -32,11 +32,16 @@ export class GetProductsRepository implements IProductsRepository {
 
     for await (const line of rl) {
       let filteredProduct = JSON.parse(line)
-      if (
+       if (
         filteredProduct.department.toLowerCase() ==
         organizationName.toLowerCase()
       ) {
-        products.push(filteredProduct)
+
+        filteredProduct.tags.filter(tag => {
+          user_tags.every(user_tag => {
+            if (tag.toLowerCase().includes(user_tag.toLowerCase())) products.push(filteredProduct);
+          })
+        });
       }
     }
 

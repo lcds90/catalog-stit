@@ -1,7 +1,7 @@
 import { User } from '@entities/User'
 import { IUsersRepository } from '@repositories/IUsersRepostory'
 export class GetUsersRepository implements IUsersRepository {
-  private usersJson = require('./fixtures/users.json')
+  private usersJson = require('@fixtures/users.json')
   private users: User[] = [...this.usersJson]
 
   async findByEmail(email: string): Promise<User> {

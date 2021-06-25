@@ -10,7 +10,7 @@
     "paths": {
       "@repositories/*": ["repositories/*"],
       "@implementations/*": ["repositories/implementations/*"],
-      "@fixtures/*": ["repositories/fixtures/*"],
+      "@fixtures/*": ["repositories/implementations/fixtures/*"],
       "@entities/*": ["entities/*"],
       "@useCases/*": ["useCases/*"],
       "@routes/*": ["routes/*"],
