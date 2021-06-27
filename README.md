@@ -7,7 +7,7 @@
 - [Conceitos](#concepts)
 
 <hr>
-<h2>:checkered_flag: Sobre o projeto </h2> <a name="about"></a>
+<h2>:bookmark_tabs: Sobre o projeto </h2> <a name="about"></a>
 
 ### Resumo do projeto
 
@@ -16,7 +16,7 @@ Onde como dados a API disponibiliza um catalogo interno de produtos, onde os ven
 
 <hr>
 
-<h3>:flags: Rotas da Aplicação </h3> <a name="routesandrules"></a>
+<h3>:warning: Rotas da Aplicação </h3> <a name="routesandrules"></a>
 
 <details>
 <summary>Expandir</summary>
@@ -58,7 +58,7 @@ Status 400 :x: - Devolve mensagem de erro ao solicitante
 
 </details>
 
-<h3>:no_entry_sign: Regras de Negócio </h3> <a name="routesandrules"></a>
+<h3>:large_blue_circle: Regras de Negócio </h3> <a name="routesandrules"></a>
 
 <details>
 <summary>Expandir</summary>
@@ -88,7 +88,7 @@ Status 400 :x: - Devolve mensagem de erro ao solicitante
 </details>
 
 <hr>
-<h2>:pencil: Conceitos aplicados </h2> <a name="concepts"></a>
+<h2>:books: Conceitos aplicados </h2> <a name="concepts"></a>
 
 ### :file_folder: Estrutura do Projeto
 
