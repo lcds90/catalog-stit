@@ -1,5 +1,9 @@
 # ST IT Cloud - Development Test LV. 3
-> Projeto de API desenvolvido em Node, disponível em: https://api-catalog-list.herokuapp.com/
+<div align="center">
+
+_API desenvolvida em Node JS para processo seletivo na ST IT Cloud._
+
+<img src="https://lirp.cdn-website.com/2f49c5f7/dms3rep/multi/opt/Prancheta-1-640w.png" alt="drawing" width="200"/>
 
 ## Sumário:
 - [Sobre](#about)
