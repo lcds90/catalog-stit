@@ -9,11 +9,11 @@ export class AuthUserController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { email, password } = request.body
     try {
-      await this.authUserUseCase.execute({
+      const user = await this.authUserUseCase.execute({
         email,
         password,
       })
-      const token = jwt.sign({ email }, secret)
+      const token = jwt.sign({ email, role: user.roles }, secret)
       response.json({
         token,
       })
@@ -36,6 +36,7 @@ export class AuthUserController {
               .status(500)
               .send({ auth: false, message: 'Token inválido.' })
           }
+          console.log(decoded);
           next()
         })
         // response.send("Voce não tem privilegios para esta ação");

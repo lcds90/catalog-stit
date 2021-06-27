@@ -8,9 +8,11 @@ export class AuthUserUseCase {
     const userExists = await this.userRepository.findByEmail(data.email)
     if (!userExists) throw new Error('Usuário inexistente')
 
-    const isLoginValid = await this.userRepository.validatePassword(
+    const ifLoginIsValidReturnUser = await this.userRepository.validatePassword(
       data.password
     )
-    if (!isLoginValid) throw new Error('Dados inválidos')
+    if (!ifLoginIsValidReturnUser) throw new Error('Dados inválidos')
+
+    return ifLoginIsValidReturnUser;
   }
 }

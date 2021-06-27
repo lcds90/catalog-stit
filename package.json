@@ -3,18 +3,15 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register src/server.ts",
-    "dev": "tsnd -r tsconfig-paths/register --transpile-only --respawn --ignore-watch node_modules src/server.ts",
-    "jest": "jest --verbose",
-    "test": "jest"
+    "start": "ts-node -r tsconfig-paths/register src/server.ts --transpile-only",
+    "dev": "tsnd -r tsconfig-paths/register --respawn --ignore-watch node_modules src/server.ts",
+    "test": "jest --verbose"
   },
   "dependencies": {
-    "debug": "4.1",
     "es-dirname": "^0.1.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "ts-node": "^10.0.0",
-    "txt-file-to-json": "^3.0.6",
     "tsconfig-paths": "^3.9.0",
     "uuidv4": "^6.2.10"
   },
