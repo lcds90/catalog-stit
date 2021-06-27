@@ -1,5 +1,6 @@
 const request = require('supertest')
 import { app } from '@app/app'
+
 describe('[Controller] Auth', () => {
   it('should access route and get token as response', async () => {
     const res = await request(app).post('/login').send({
