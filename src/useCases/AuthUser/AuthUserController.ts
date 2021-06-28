@@ -13,7 +13,7 @@ export class AuthUserController {
         email,
         password,
       })
-      const token = jwt.sign({ email, role: user.roles }, secret)
+      const token = jwt.sign({ email, roles: user.roles }, secret)
       response.json({
         token,
       })
@@ -30,16 +30,14 @@ export class AuthUserController {
       const bearer = authToken.split(' ')
       const token = bearer[1];
       try {
-        jwt.verify(token, secret, (err, decoded) => {
+        await jwt.verify(token, secret, (err, decoded) => {
           if (err) {
             return response
               .status(500)
               .send({ auth: false, message: 'Token inválido.' })
           }
-          console.log(decoded);
           next()
         })
-        // response.send("Voce não tem privilegios para esta ação");
       } catch (error) {
         response.status(403)
         response.send('Voce não está autenticado')
@@ -51,4 +49,6 @@ export class AuthUserController {
       return
     }
   }
+  
 }
+

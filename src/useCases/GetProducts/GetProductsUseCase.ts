@@ -7,7 +7,8 @@ export class GetProductsUseCase {
   async execute(data: IGetProductsRequestDTO) {
     const products = await this.productsRepository.findProducts(
       data.organizationName,
-      data.tagsArray
+      data.tagsArray,
+      data.roles
     )
     if (!products)
       throw new Error(
