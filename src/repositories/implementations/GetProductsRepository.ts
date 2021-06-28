@@ -8,19 +8,14 @@ const readline = require('readline');
 import { Product } from '@entities/Product';
 import { IProductsRepository } from '@repositories/IProductsRepository';
 
-type objectProducts = {
-  name: string;
-  level: any;
-  parent: string;
-};
 export class GetProductsRepository implements IProductsRepository {
-  /*   async validateRoleAndVerifyProduct(
+    /* async validateRoleAndVerifyProduct(
     organizationName: string,
     role: string,
-    products: objectProducts[]
-  ): Promise<objectProducts[]> | undefined {
+    products: Product[]
+  ): Promise<Product[]> | undefined {
     for(const product of products){
-      product.
+      product.name
     }
   } */
 
@@ -35,13 +30,6 @@ export class GetProductsRepository implements IProductsRepository {
       return queries.includes(product.department);
     });
 
-    /* const objectProducts: objectProducts[] = await filteredItems.map((product) => {
-      return {
-        name: `${product.name}`,
-        level: `${Number(level)}`,
-        parent: `${product.department}`,
-      };
-    }); */
     filteredItems.unshift({
       name: `${parent}`,
       level: 1,
@@ -145,9 +133,6 @@ export class GetProductsRepository implements IProductsRepository {
       level: 0,
     });
 
-    console.log('A', stuffA.length);
-    console.log('B', stuffB.length);
-    console.log('C', stuffC.length);
     return [].concat(...stuffA, ...stuffB, ...stuffC);
   }
 
@@ -189,9 +174,11 @@ export class GetProductsRepository implements IProductsRepository {
         }
       }
     }
-
-    const list = await this.generateListOrganization(products);
-
-    return list;
+    if(products.length > 0){
+      const list = await this.generateListOrganization(products);
+      return list;
+    }
+    // const isValid = await this.validateRoleAndVerifyProduct(organizationName, role, list);
+    return undefined;
   }
 }
