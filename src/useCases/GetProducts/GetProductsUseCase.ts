@@ -1,5 +1,5 @@
-import { IProductsRepository } from '@repositories/IProductsRepository'
-import { IGetProductsRequestDTO } from './IGetProductsDTO'
+import { IProductsRepository } from '@repositories/IProductsRepository';
+import { IGetProductsRequestDTO } from './IGetProductsDTO';
 
 export class GetProductsUseCase {
   constructor(private productsRepository: IProductsRepository) {}
@@ -9,11 +9,11 @@ export class GetProductsUseCase {
       data.organizationName,
       data.tagsArray,
       data.roles
-    )
+    );
     if (!products)
       throw new Error(
         'Não foi localizado nenhum produto com o parametro informado.'
-      )
-    return products
+      );
+    return products;
   }
 }

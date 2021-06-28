@@ -9,7 +9,7 @@ import { Product } from '@entities/Product';
 import { IProductsRepository } from '@repositories/IProductsRepository';
 
 export class GetProductsRepository implements IProductsRepository {
-    /* async validateRoleAndVerifyProduct(
+  /* async validateRoleAndVerifyProduct(
     organizationName: string,
     role: string,
     products: Product[]
@@ -160,11 +160,10 @@ export class GetProductsRepository implements IProductsRepository {
         filteredProduct.department.toLowerCase() ==
         organizationName.toLowerCase()
       ) {
-
         if (user_tags.length > 0) {
           filteredProduct.tags.filter((tag) => {
             user_tags.filter((user_tag) => {
-              if ( tag.toLowerCase() === user_tag.toLowerCase() ) {
+              if (tag.toLowerCase() === user_tag.toLowerCase()) {
                 products.push(filteredProduct);
               }
             });
@@ -174,7 +173,7 @@ export class GetProductsRepository implements IProductsRepository {
         }
       }
     }
-    if(products.length > 0){
+    if (products.length > 0) {
       const list = await this.generateListOrganization(products);
       return list;
     }

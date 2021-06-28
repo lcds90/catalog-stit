@@ -118,15 +118,16 @@ como paramêtros para processar a solicitação
 
 1.  [Yarn](https://yarnpkg.com/): Gerenciador de depedências do projeto utilizado.
 1.  [Express](https://expressjs.com/pt-br/): Framework para escalar API e realizar requisições.
+1.  [CORS](https://yarnpkg.com/package/cors): Biblioteca responsável para permitir solicitações externas ao servidor. 
 1.  [Json Web Token](https://jwt.io/): Biblioteca responsável pela realização de autenticação. 
-1.  [ts-node/ts-node-dev](https://www.npmjs.com/package/ts-node): Como é utilizado typescript no projeto, ela realiza a execução diretamente em Node, sem a necessidade de pré compilar o código. 
-1.  [ts-configpaths](https://www.npmjs.com/package/tsconfig-paths): No projeto é utilzado rotas personalizadas como pode se conferir no arquivo ```tsconfig.json```, ela realiza a relação do caminho para validação de encontrar os caminhos solicitados dos arquivos.
-1.  [uuidv4](https://www.npmjs.com/package/uuidv4): Biblioteca responsável pela geração de IDs dinâmicos para os produtos.
-1.  [es-dirname](https://www.npmjs.com/package/es-dirname): Para utilização de streams, é necessário a utilização do new URL(import.meta.URL), porém nas configurações aonde o projeto está configurado com os padrões do ES6, e o tipo de módulo como CommonJS, não consigo utilizar o es2020, esnext ou system devido a utilização de arquivos json, porém essa biblioteca conseguiu suprir a necessidade da relação mais próxima com essa função. 
+1.  [ts-node/ts-node-dev](https://yarnpkg.com/package/ts-node): Como é utilizado typescript no projeto, ela realiza a execução diretamente em Node, sem a necessidade de pré compilar o código. 
+1.  [ts-configpaths](https://yarnpkg.com/package/tsconfig-paths): No projeto é utilzado rotas personalizadas como pode se conferir no arquivo ```tsconfig.json```, ela realiza a relação do caminho para validação de encontrar os caminhos solicitados dos arquivos.
+1.  [uuidv4](https://yarnpkg.com/package/uuidv4): Biblioteca responsável pela geração de IDs dinâmicos para os produtos.
+1.  [es-dirname](https://yarnpkg.com/package/es-dirname): Para utilização de streams, é necessário a utilização do new URL(import.meta.URL), porém nas configurações aonde o projeto está configurado com os padrões do ES6, e o tipo de módulo como CommonJS, não consigo utilizar o es2020, esnext ou system devido a utilização de arquivos json, porém essa biblioteca conseguiu suprir a necessidade da relação mais próxima com essa função. 
 1.  [@babel/...](https://babeljs.io/): Transpilador do typescript para javascript para execução geral.
 1.  @types...: Facilitador de sugestão de códigos de respectiva biblioteca.
 1.  [Jest/ts-jest](https://jestjs.io/pt-BR/): Framework responsável pela parte de testes na aplicação, ts-jest é a biblioteca com suporte para typescript.
-1.  [supertest](https://www.npmjs.com/package/supertest): Biblioteca responsável pela chamadas HTTP na área de testes, sem a necessidade do servidor estar incializado.
+1.  [supertest](https://yarnpkg.com/package/supertest): Biblioteca responsável pela chamadas HTTP na área de testes, sem a necessidade do servidor estar incializado.
 1.  [Typescript](https://www.typescriptlang.org/): Conjunto de ferramentas e formas mais eficientes de escrever código JavaScript,.
 
 * * *
