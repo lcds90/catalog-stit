@@ -173,8 +173,8 @@ As classes com I, são interfaces obrigando os métodos que precisam ser escrito
     - ```findByEmail```: Utilizado método find para localizar email.
     - ```validatePassword```: Utilizado método find para validar senha.
 -  ```GetProductsRepository.ts```
-    - ```findProducts```: Nela é onde pode-se realizar o método de streams em chunk, porém ainda não consegui realizar a implementação, até o momento essa função está realizando um readline do arquivo, lendo linha por linha comparando o parametro que vem da url e filtrando as tags, logo após esse processo o array é enviado para a função abaixo.
-    - ```generateListOrganization```: Função responsável por gerar a lista final, nela é reaproveitado a função ```generateSubCategory``` que é responsável, por realizar o elemento pai de cada uma de acordo com os parametros passado e gerar um objeto, após todos esses passos a função retorna um array concatenando com todos os casos declarados. Irá retornar ```undefined``` caso nenhum parametro seja satisfatório.
+    - ```findProducts```: Função realiza um readline do arquivo, lendo linha por linha comparando o parametro que vem da url e filtrando as tags, logo após esse processo o array é enviado para a função abaixo.
+    - ```generateListOrganization```: Função responsável por gerar a lista final, nela é reaproveitado a função ```generateSubCategory``` que é responsável, por realizar o elemento pai de cada uma de acordo com os parametros passado e gerar um objeto, após todos esses passos a função retorna um array concatenando com todos os casos declarados. Irá retornar ```undefined``` caso nenhum parametro seja satisfatório. Neste arquivo pode-se realizar o método de streams em chunk, porém ainda não consegui realizar a implementação e estou melhorando o filtro em relação a validação de cargos e ordenação excluindo os itens restantes.
     - ```validateRoleAndVerifyProduct```: Função ainda não implementada, porém nela irei validar o cargo do usuário com os filtros de regras de negócio.
 #### :open_file_folder: routes
 > ./src/routes
