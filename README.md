@@ -195,8 +195,10 @@ O diretório de useCases contem as regras de negócio da aplicação separadas e
 
 ##### :small_blue_diamond: app.ts
 > ./src/app.ts
+
 Arquivo que contém inicialização do express e ativa as rotas da aplicação.
 
 ##### :small_blue_diamond: server.ts
 > ./src/server.ts
+
 Inicialização do servidor.
