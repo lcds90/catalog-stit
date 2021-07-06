@@ -23,7 +23,9 @@ A aplicação está hospedada no serviço do heroku, através de deploy automati
 <h3 align="center">
 
 :globe_with_meridians: [Deploy](https://api-catalog-list.herokuapp.com/)
-
+    
+:books: [Documentação Swagger](https://api-catalog-list.herokuapp.com/docs)
+    
 </h3>
 
 
