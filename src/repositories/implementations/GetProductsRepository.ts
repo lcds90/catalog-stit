@@ -16,7 +16,7 @@ export class GetProductsRepository implements IProductsRepository {
     
     // NOTE middle - level 1 e 2
     if (role === 'middle'){
-      
+
     }
     // junior - level 2
     // intern - level 0, 1 e 2, porém somente sob a organization STUFF A
@@ -57,11 +57,13 @@ export class GetProductsRepository implements IProductsRepository {
       ) {
         // NOTE Verificando a existência de tags, pois a cada uma que percorrer e a combinação estar correta será acrescentado ao Array products
         if (user_tags.length > 0) {
+
+          // NOTE Para cada tag do produto verificando com as quais os usuario solicitou
           for (const tag of filteredProduct.tags) {
-            user_tags.map((userTag) => {
+            for ( const userTag of user_tags) {
               if (userTag.toLowerCase() === tag.toLowerCase())
                 products.push(filteredProduct);
-            });
+            };
           }
         } else {
           // NOTE Caso não tenha tags, irá realizar o filtro com somente os itens da categoria
