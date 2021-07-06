@@ -137,6 +137,7 @@ router.post('/login', (request, response) => {
  *        required: true
  *        schema:
  *          type: string
+ *          example: Bearer <token>
  *    responses:
  *      '200':
  *        description: 'Returns an object containing the keys in response: intro, docs, login and products.'
