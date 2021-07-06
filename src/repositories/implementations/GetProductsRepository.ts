@@ -36,7 +36,7 @@ export class GetProductsRepository implements IProductsRepository {
     roles: string[]
   ): Promise<Product[]> {
     const filesDir = `${dirname()}/fixtures/`;
-    const role = roles[0];
+    // const role = roles[0];
 
     const streamFile = createReadStream(join(filesDir, 'products.txt'));
 

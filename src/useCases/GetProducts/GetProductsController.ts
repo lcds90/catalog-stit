@@ -25,8 +25,8 @@ export class GetProductsController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { organizationName } = request.params;
     const { tags } = request.query;
-    const tagsArray: string[] = [];
-      // tags !== undefined ? tags.toString().split(',') : undefined;
+    const tagsArray: string[] =
+      tags !== undefined ? tags.toString().split(',') : undefined;
     try {
       const authToken = request.headers['authorization'];
       const roles = await this.getRole(authToken);
