@@ -23,11 +23,11 @@ export class GetProductsRepository implements IProductsRepository {
   }
 
   async generateListOrganization(products: Product[], role: string) {
-    const isRoleValidWithProductsList = products.map((product) =>
-      this.checkLevelStuff(product, role)
-    );
-    if (isRoleValidWithProductsList) return products;
-    return undefined;
+    // const isRoleValidWithProductsList = products.map((product) =>
+      // this.checkLevelStuff(product, role)
+    // );
+    // if (isRoleValidWithProductsList) return products;
+    return products;
   }
 
   async findProducts(
@@ -56,7 +56,7 @@ export class GetProductsRepository implements IProductsRepository {
         organizationName.toLowerCase()
       ) {
         // NOTE Verificando a existência de tags, pois a cada uma que percorrer e a combinação estar correta será acrescentado ao Array products
-        if (user_tags.length > 0) {
+        if (user_tags !== undefined) {
 
           // NOTE Para cada tag do produto verificando com as quais os usuario solicitou
           for (const tag of filteredProduct.tags) {
@@ -73,8 +73,8 @@ export class GetProductsRepository implements IProductsRepository {
     }
     // NOTE Caso tenha sucesso no retorno de produtos retorna a lista com a verificação de cada item com o cargo atual do usuário
     if (products.length > 0) {
-      const list = await this.generateListOrganization(products, role);
-      return list;
+      // const list = await this.generateListOrganization(products, role);
+      return products;
     }
 
     // NOTE Retorno para acionamento de erro do useCase, caso nenhum parametro correspondeu a busca

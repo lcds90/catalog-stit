@@ -25,18 +25,18 @@ export class GetProductsController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { organizationName } = request.params;
     const { tags } = request.query;
-    const tagsArray: string[] =
-      tags !== undefined ? tags.toString().split(',') : [];
+    const tagsArray: string[] = [];
+      // tags !== undefined ? tags.toString().split(',') : undefined;
     try {
       const authToken = request.headers['authorization'];
-      const roles = this.getRole(authToken);
+      const roles = await this.getRole(authToken);
       const locateProducts = await this.getProductsUseCase.execute({
         organizationName,
         tagsArray,
         roles,
       });
 
-      response.json({
+      await response.json({
         total: locateProducts.length,
         products: locateProducts,
       });
@@ -44,6 +44,7 @@ export class GetProductsController {
     } catch (error) {
       return response.status(400).json({
         message: error.message || 'Unexpected error.',
+        params: { organizationName, tags, tagsArray }
       });
     }
   }

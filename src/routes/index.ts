@@ -25,6 +25,18 @@ const swaggerOptions = {
         },
       ],
     },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        }
+      }
+    },
+    security: [{
+      bearerAuth: []
+    }]
   },
   apis: ['./src/routes/index.ts'],
 };
@@ -35,7 +47,7 @@ router.get('/docs', swaggerUI.setup(swaggerDocs));
 
 /**
  * @swagger
- * 
+ *
  * definitions:
  *    User:
  *      type: object
@@ -50,7 +62,7 @@ router.get('/docs', swaggerUI.setup(swaggerDocs));
  *        password:
  *          type: string
  *          description: User's password
- * 
+ *
  */
 
 /**
@@ -105,6 +117,30 @@ router.post('/login', (request, response) => {
   return authUserController.handle(request, response);
 });
 
+/**
+ * @swagger
+ * /products/{organizationName}:
+ *  get:
+ *    security:
+ *      - bearerAuth: []
+ *    description: 'Return all elements that match with organization name.'
+ *    summary: 'Return all products with specified organization name'
+ *    parameters:
+ *      - in: path
+ *        name: organizationName
+ *        required: true
+ *        schema:
+ *          type: string
+ *        description: 'Organization to filter'
+ *      - in: header
+ *        name: authorization
+ *        required: true
+ *        schema:
+ *          type: string
+ *    responses:
+ *      '200':
+ *        description: 'Returns an object containing the keys in response: intro, docs, login and products.'
+ */
 router.get(
   '/products/:organizationName',
   authUserController.verify,
